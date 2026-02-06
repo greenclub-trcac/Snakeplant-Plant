@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snake Plant — Green Club</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #041018;
+      --card: #07232b;
+      --accent: #901904;
+      --muted: #a3bcbc;
+      --text: #eaf7f3;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', system-ui, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #01121a 0%, #042a30 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 760px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 85px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .plant-header {
+      flex: 1;
+      text-align: center;
+    }
+
+    .plant-title {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .sidebar {
+      background: rgba(255,255,255,0.04);
+      padding: 20px;
+      border-radius: 14px;
+      margin-top: 24px;
+    }
+
+    .species {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .plant-img {
+      width: 100%;
+      max-width: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 10px auto 20px;
+      display: block;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #e8f7f0;
+      white-space: pre-line;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    .qr-sample {
+      margin-top: 16px;
+      background: rgba(255,255,255,0.05);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      word-wrap: break-word;
+    }
+
+    #enableAudioBtn {
+      display: none;
+      margin: 10px auto 20px;
+      padding: 20px 60px;
+      border-radius: 8px;
+      border: none;
+      background: var(--accent);
+      color: #c0c0c0;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 15px;
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      .container { padding: 18px; }
+      .logo { width: 70px; }
+      .plant-title { font-size: 24px; }
+      .desc { font-size: 14px; }
+      footer { font-size: 13px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="http://trcac.org.in/">
+        <img src="assets/Trcaclogo.png" alt="TRCAC Logo" class="logo">
+      </a>
+
+      <div class="plant-header">
+        <div class="plant-title">Snake Plant</div>
+        <div class="meta">Dracaena trifasciata</div>
+      </div>
+
+      <img src="assets/Green_club.jpg" alt="Green Club Logo" class="logo">
+    </header>
+
+    <aside class="sidebar">
+      <div class="species">Snake Plant — Dracaena trifasciata</div>
+
+      <img src="assets/image.png" alt="Snake Plant" class="plant-img">
+
+      <button id="enableAudioBtn">🔊 Enable Audio</button>
+
+      <div class="desc">
+Snake Plant, scientifically known as Dracaena trifasciata, is a hardy indoor plant famous for its air-purifying ability and low maintenance. It is also called Mother-in-Law’s Tongue.
+
+🌿 Estimated Oxygen Release Rate:
+Snake plants release oxygen even at night, making them excellent plants for bedrooms and indoor spaces.
+
+🌍 Carbon Sequestration Rate:
+A healthy Snake Plant can absorb approximately 0.1–0.2 kg of CO₂ per year.
+
+✨ Attractive & Interesting Uses:
+
+1️⃣ Air Purifier:
+Snake Plant helps remove toxins like formaldehyde and benzene from the air.
+
+2️⃣ Low Maintenance Indoor Plant:
+It requires very little water and can survive in low light conditions.
+
+3️⃣ Decorative & Feng Shui Use:
+Snake Plant is believed to bring positive energy and good luck indoors.
+
+🌸 Fun Fact:
+Snake Plant is one of the few plants that continues oxygen release during the night.
+      </div>
+
+      <audio id="audio" preload="metadata" src="assets/SnakePlant.wav"></audio>
+
+      <div class="qr-sample">
+        QR opened: <span id="openedUrl"></span>
+      </div>
+    </aside>
+
+    <div style="margin-top:14px;color:var(--muted);font-size:13px;text-align:center">
+      Tip: Audio will auto-play shortly.
+    </div>
+  </div>
+
+  <footer>
+    Developed and Managed by <strong>DevClub TRCAC</strong>
+  </footer>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const btn = document.getElementById('enableAudioBtn');
+
+    document.getElementById('openedUrl').textContent = location.href;
+
+    function tryPlay() {
+      audio.muted = true;
+      audio.play().then(() => {
+        setTimeout(() => audio.muted = false, 1);
+      }).catch(() => {
+        btn.style.display = 'block';
+      });
+    }
+
+    btn.addEventListener('click', () => {
+      audio.muted = false;
+      audio.play();
+      btn.style.display = 'none';
+    });
+
+    window.addEventListener('load', () => {
+      setTimeout(tryPlay, 2000);
+    });
+  </script>
+
+</body>
+</html>
